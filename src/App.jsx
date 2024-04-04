@@ -6,13 +6,16 @@ import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import ResetPassword from "./pages/ResetPassword";
 import Test from "./pages/Test";
+import GameCenter from "./pages/GameCenter";
+import SparkmanGame from "./pages/SparkmanGame";
+import RaceGame from "./pages/RaceGame";
 
 
 function Layout(){
   const { user } = useSelector((state) => state.user);
   const location = useLocation()
 
-  return user?.token ?(
+  return user?.token?(
     <Outlet/>
   ):(
     <Navigate to ="/login" state={{from: location}} replace/>
@@ -33,7 +36,10 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/reset-password' element={<ResetPassword />} />
-        <Route path="/test" element={<Test/>}/>
+        <Route path='/test' element={<Test/>}/>
+        <Route path='/gamecenter' element={<GameCenter/>}/>
+        <Route path='/sparkmangame' element={<SparkmanGame/>} />
+        <Route path='/racegame' element={<RaceGame/>} />
       </Routes>
     </div>
   )

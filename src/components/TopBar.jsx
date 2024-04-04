@@ -8,6 +8,7 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 import { Logout } from "../redux/userSlice";
 import { fetchAllPosts } from '../utils/index.jsx';
 import { IoGameController } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 const TopBar = () => {
 
@@ -22,6 +23,11 @@ const TopBar = () => {
       const handleSearch = async (data) => {
         await fetchAllPosts(user.token, dispatch, "", data);
       };
+
+      let navigate = useNavigate();
+      const handleToGameCenter = () => {
+        navigate("/gamecenter");
+      } 
 
   return (
     <div className='topbar w-full flex items-center justify-between py-3 sm:py-4 px-4 bg-oxford-blue-950'>
@@ -40,13 +46,13 @@ const TopBar = () => {
         <CustomButton
           title='Search'
           type='submit'
-          containerStyles='w-[70px] lg:w-[96px] bg-azure-radiance-600 text-white8 px-4 lg:px-5 py-2.5 mt-2 rounded-r-full border border-[#66666690] outline-none'
+          containerStyles='hidden sm:hidden lg:inline-block w-[70px] lg:w-[96px] bg-azure-radiance-600 text-white8 px-6 py-2.5 mt-2 rounded-r-full border border-[#66666690] outline-none'
         />
       </form>
 
       {/* ICONS */}
       <div className='flex gap-4 items-center text-ascent-1 text-md md:text-xl'>
-        <div className='text-2xl lg:flex mr-5 text-white8' >
+        <div className='text-2xl lg:flex mr-5 text-white8' onClick={handleToGameCenter}>
          <IoGameController />
         </div>
         <div className='text-2xl lg:flex mr-5 text-white8'>
