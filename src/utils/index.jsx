@@ -112,7 +112,7 @@ export const getUserInfo = async (id, token) => {
 
 export const sendFriendRequest = async (id, token) => {
     const res = await apiRequest({
-        url:"user/friend-request",
+        url:"/user/friend-request",
         token: token,
         method: "POST",
         data:{ requestTo: id }
@@ -126,6 +126,15 @@ export const profileVisitors = async (id, token) =>{
         token: token,
         method: "POST",
         data: { id },
+    })
+    return;
+}
+
+export const startMining = async (token) => {
+    const res = await apiRequest({
+        url:"/user/spark-coin-mining",
+        token: token,
+        method: "POST",
     })
     return;
 }

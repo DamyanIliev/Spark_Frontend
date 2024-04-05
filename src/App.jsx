@@ -5,10 +5,10 @@ import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import ResetPassword from "./pages/ResetPassword";
-import Test from "./pages/Test";
 import GameCenter from "./pages/GameCenter";
 import SparkmanGame from "./pages/SparkmanGame";
 import RaceGame from "./pages/RaceGame";
+import CryptoStore from "./pages/CryptoStore";
 
 
 function Layout(){
@@ -31,12 +31,12 @@ function App() {
         <Route element={<Layout />}>
           <Route path='/' element={<Home />} />
           <Route path='/profile/:id?' element={<Profile />} />
+          <Route path='/cryptostore' element={<CryptoStore />}/>
         </Route>
 
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/reset-password' element={<ResetPassword />} />
-        <Route path='/test' element={<Test/>}/>
         <Route path='/gamecenter' element={<GameCenter/>}/>
         <Route path='/sparkmangame' element={<SparkmanGame/>} />
         <Route path='/racegame' element={<RaceGame/>} />

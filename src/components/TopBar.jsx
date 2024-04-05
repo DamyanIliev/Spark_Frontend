@@ -9,6 +9,7 @@ import { Logout } from "../redux/userSlice";
 import { fetchAllPosts } from '../utils/index.jsx';
 import { IoGameController } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+import { GiCrownCoin } from "react-icons/gi";
 
 const TopBar = () => {
 
@@ -27,7 +28,11 @@ const TopBar = () => {
       let navigate = useNavigate();
       const handleToGameCenter = () => {
         navigate("/gamecenter");
-      } 
+      };
+
+      const handleToTest = () => {
+        navigate("/cryptostore");
+      };
 
   return (
     <div className='topbar w-full flex items-center justify-between py-3 sm:py-4 px-4 bg-oxford-blue-950'>
@@ -52,7 +57,10 @@ const TopBar = () => {
 
       {/* ICONS */}
       <div className='flex gap-4 items-center text-ascent-1 text-md md:text-xl'>
-        <div className='text-2xl lg:flex mr-5 text-white8' onClick={handleToGameCenter}>
+        <div className='text-2xl lg:flex mr-5 text-white8 cursor-pointer' onClick={handleToTest}>
+        <GiCrownCoin />
+        </div>
+        <div className='text-2xl lg:flex mr-5 text-white8 cursor-pointer' onClick={handleToGameCenter}>
          <IoGameController />
         </div>
         <div className='text-2xl lg:flex mr-5 text-white8'>
