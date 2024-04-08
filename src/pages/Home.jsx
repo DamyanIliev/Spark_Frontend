@@ -270,7 +270,7 @@ const Home = () => {
                 friendRequest?.map(({_id, requestFrom:from}) => (
                   <div key={_id} className='flex items-center justify-between'>
                     <Link to={"/profile/"+ from?._id} className=" w-full flex gap-4 items-center cursor-pointer ">
-                      <img src={profilepicUrl+ from?.profileUrl} 
+                      <img src={profilepicUrl + from?.profileUrl} 
                       alt={from?.firstName} className='w-10 h-10 object-cover rounded-full'/>
                       <div className='flex-1'>
                       <p className='text-base font-medium text-white8'>

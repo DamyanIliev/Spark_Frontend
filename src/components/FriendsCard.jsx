@@ -1,8 +1,10 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import NoProfile from "/profilepic/userprofile.png"
 
 const FriendsCard = ({ friends }) => {
+
+  const profilepicUrl = `http://localhost:8080/user/public/`; 
+
   return (
     <div>
       <div className='w-full bg-oxford-blue-900 shadow-sm rounded-lg px-6 py-5'>
@@ -18,7 +20,7 @@ const FriendsCard = ({ friends }) => {
               className='w-full flex gap-4 items-center cursor-pointer'
             >
               <img
-                src={friend?.profileUrl ?? NoProfile}
+                src={profilepicUrl + friend?.profileUrl}
                 alt={friend?.firstName}
                 className='w-10 h-10 object-cover rounded-full'
               />
