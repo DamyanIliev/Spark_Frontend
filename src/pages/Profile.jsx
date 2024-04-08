@@ -7,7 +7,7 @@ import PostCard from '../components/PostCard';
 import FriendsCard from '../components/FriendsCard';
 import ProfileCard from '../components/ProfileCard';
 import TopBar from '../components/TopBar';
-import { deletePost, fetchAllPosts, getUserInfo, likePost } from '../utils';
+import { deletePost, fetchAllPosts, getUserInfo, likePost, profileVisitors } from '../utils';
 
 
 const Profile = () => {
@@ -48,10 +48,19 @@ const Profile = () => {
       }
   };
 
+  const profileVisit = async () => {
+    try {
+      await profileVisitors(id, user?.token);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
    useEffect(() =>{
     setLoading(true);
     getUserr();
     getPostt();
+    profileVisit();
    }, [id]);
 
   return (

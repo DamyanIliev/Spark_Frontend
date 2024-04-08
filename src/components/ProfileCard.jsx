@@ -67,7 +67,7 @@ const ProfileCard = ({ user }) => {
           </p>
           <div className='flex items-center justify-between'>
             <span className='text-grey8'>Profile visits</span>
-            <span className='text-grey8 text-lg'>{user?.views?.length}</span>
+            <span className='text-grey8 text-lg'>{user?.views?.length + 1}</span>
           </div>
           <span className='text-base text-blue-700'>
             {user?.verified ? "Verified Account" : "Not Verified"}
