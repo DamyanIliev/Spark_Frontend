@@ -59,7 +59,7 @@ const CryptoStore = () => {
     } catch (error) {
         console.error("Error fetching Spark Coins:", error);
     }
-  }, 10000);
+  }, 3000);
       return () => clearInterval(intervalFetch);
     },[]);
 
@@ -110,6 +110,7 @@ const CryptoStore = () => {
               method: "POST",
           })
           setErrMsg2(res);
+          await fetchSparkCoins(user.token);
         await fetchAllListings(user.token, dispatch);
       }catch(error){
         console.log(error);
@@ -139,10 +140,10 @@ const CryptoStore = () => {
             <img
                   src={`${profilepicUrl + user?.profileUrl}`}
                   alt='User Image'
-                  className='w-14 h-14 rounded-full object-cover'
+                  className='mx-2 w-14 h-14 rounded-full object-cover'
                 />
                 <TextInput
-                  styles='w-full rounded-full py-5'
+                  styles=' mx-8 w-11/12 rounded-full py-5'
                   placeholder="Describe your listing"
                   name='description'
                   register={register("description", {
@@ -151,7 +152,7 @@ const CryptoStore = () => {
                   error={errors.description ? errors.description.message : ""}
                 />
                 <TextInput
-                  styles='w-full rounded-full py-5'
+                  styles=' w-11/12 rounded-full py-5'
                   placeholder="Price"
                   name='price'
                   register={register("price", {
@@ -159,7 +160,7 @@ const CryptoStore = () => {
                 })}
                   error={errors.price ? errors.price.message : ""}
                 />
-                <label htmlFor = "imgUpload" className='mx-5 flex items-center gap-1 text-grey8 hover:text-white8 cursor-pointer'>
+                <label htmlFor = "imgUpload" className='mx-8 flex items-center gap-1 text-grey8 hover:text-white8 cursor-pointer'>
                   <input
                     type='file'
                     onChange={(e) => setFile(e.target.files[0])}
@@ -172,7 +173,7 @@ const CryptoStore = () => {
                   <span>Image</span>
                   </label>
                   
-                  <div className='mx-5'>
+                  <div className='mx-8'>
                   {isListing ? (
                     <Loading />
                   ) : (
