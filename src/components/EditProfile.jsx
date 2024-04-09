@@ -144,7 +144,7 @@ const EditProfile = () => {
               />
 
               <label
-                className='flex items-center gap-1 text-base text-ascent-2 hover:text-white8 cursor-pointer my-4'
+                className='flex items-center gap-1 text-base text-grey8 hover:text-white8 cursor-pointer my-4'
                 htmlFor='imgUpload'
               >
                 <input

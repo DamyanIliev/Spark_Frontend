@@ -10,7 +10,7 @@ import CustomButton from '../components/CustomButton';
 import  TextInput  from "../components/TextInput";
 import { BsFiletypeGif, BsPersonFillAdd } from "react-icons/bs";
 import { BiImages, BiSolidVideo } from "react-icons/bi";
-import  Loading  from "../components/Loading"
+import  Loading  from "../components/Loading";
 import PostCard from '../components/PostCard';
 import EditProfile from '../components/EditProfile';
 import { apiRequest, deletePost, fetchAllPosts, getUserInfo, handleUploadImages, likePost, sendFriendRequest } from '../utils';
@@ -185,7 +185,7 @@ const Home = () => {
                 )}
 
                 <div className='flex items-center justify-between py-4'>
-                  <label htmlFor = "imgUpload" className='flexx items-center gap-1 text-grey8 hover:text-white8 cursor-pointer'>
+                  <label htmlFor = "imgUpload" className='flex  items-center gap-1 text-grey8 hover:text-white8 cursor-pointer'>
                   <input
                     type='file'
                     onChange={(e) => setFile(e.target.files[0])}
@@ -197,7 +197,7 @@ const Home = () => {
                   <BiImages/>
                   <span>Image</span>
                   </label>
-                  <label htmlFor = "videoUpload" className='flexx items-center gap-1 text-grey8 hover:text-white8 cursor-pointer'> 
+                  <label htmlFor = "videoUpload" className='flex  items-center gap-1 text-grey8 hover:text-white8 cursor-pointer'> 
                   <input
                     type='file'
                     data-max-size='5120'
@@ -209,7 +209,7 @@ const Home = () => {
                   <BiSolidVideo />
                   <span>Video</span>
                   </label>
-                  <label htmlFor = "vgifUpload" className='flexx items-center gap-1 text-grey8 hover:text-white8 cursor-pointer'>
+                  <label htmlFor = "vgifUpload" className='flex  items-center gap-1 text-grey8 hover:text-white8 cursor-pointer'>
                   <input
                     type='file'
                     data-max-size='5120'
@@ -249,7 +249,7 @@ const Home = () => {
               ))
             ) : (
               <div className='flex w-full h-full items-center justify-center'>
-                <p className='text-lg text-ascent-2'>No Post Available</p>
+                <p className='text-lg text-grey8'>No Post Available</p>
               </div>
             )}
 

@@ -163,7 +163,7 @@ const Register = () => {
               />
             )}
           </form>
-          <div className=' mt-5 text-ascent-2 text-sm text-center text-white8'>
+          <div className=' mt-5 text-grey8 text-sm text-center text-white8'>
             Already has an account?{" "}
             <Link
               to='/login'

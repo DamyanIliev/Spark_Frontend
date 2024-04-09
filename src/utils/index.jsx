@@ -1,5 +1,6 @@
 import axios from "axios";
 import { SetPosts } from "../redux/postSlice";
+import { SetListings } from "../redux/listingSlice";
 import { useDispatch } from 'react-redux';
 
 
@@ -98,7 +99,7 @@ export const getUserInfo = async (id, token) => {
             method: "POST",
         })
 
-        if (res?.message === "Authentication failed"){
+        if (res.message === "Authentication failed"){
             localStorage.removeItem("user");
             window.alert("Sesion expired.");
             window,location.replace("/login");
@@ -138,3 +139,46 @@ export const startMining = async (token) => {
     })
     return;
 }
+
+export const deleteListing = async (id, token) => {
+    try {
+        const res = await apiRequest({
+            url: "/store/" + id,
+            token: token,
+            method: "DELETE",
+        });
+        return;
+    } catch (error) {
+        console.log(error);
+    }
+} 
+
+export const soldItem = async (id, token) => {
+    try {
+        const res = await apiRequest({
+            url: "/store/" + id,
+            token: token,
+            method: "POST",
+        });
+        return;
+    } catch (error) {
+        console.log(error);
+    }
+} 
+
+export const fetchAllListings = async(token, dispatch, url, data) => {
+    try {
+        const res = await apiRequest({
+            url: url || "/store",
+            token: token,
+            method: "POST",
+            data: data || {},
+        });
+
+        dispatch(SetListings(res?.data));
+        return;
+    } catch (error) {
+        console.log(error)
+    }
+}
+
