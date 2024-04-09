@@ -31,7 +31,7 @@ const ListingCard= ({ listing , user, deletelisting, sold, errMsg }) => {
           />
         )}
         {listing?.price && (
-          <p className='mb-2 text-center text-white8 mt-2 text-xl'>Price: <span className='text'>${listing?.price} Spark Coins</span></p>
+          <p className='mb-2 text-center text-white8 mt-2 text-sm'><span className='text-xl'>{listing?.price}</span> Spark Coins</p>
         )}
         </div>
         <div className='mt-1 flex justify-end'>
