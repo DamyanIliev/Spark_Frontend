@@ -1,5 +1,5 @@
 import React from 'react';
-import TopBar from '../components/TopBar';
+import TopBar from '../components/TopBars/TopBar';
 import { useNavigate } from "react-router-dom";
 
 const GameCenter = () => {

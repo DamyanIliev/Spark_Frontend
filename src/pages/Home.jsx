@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from 'react-redux';
-import TopBar from '../components/TopBar';
+import TopBar from '../components/TopBars/TopBar';
 import ProfileCard from '../components/ProfileCard';
 import FriendsCard from '../components/FriendsCard';
 import { Link } from "react-router-dom";
@@ -229,7 +229,7 @@ const Home = () => {
                     <CustomButton
                       type='submit'
                       title='Post'
-                      containerStyles='bg-[#0444a4] text-white py-1 px-6 rounded-full font-semibold text-sm'
+                      containerStyles='bg-azure-radiance-600 text-white py-1 px-6 rounded-full font-semibold text-sm'
                     />
                   )}
                 </div>

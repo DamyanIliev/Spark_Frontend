@@ -34,13 +34,13 @@ const ListingCard= ({ listing , user, deletelisting, sold, errMsg }) => {
           <p className='mb-2 text-center text-white8 mt-2 text-sm'><span className='text-xl'>{listing?.price}</span> Spark Coins</p>
         )}
         </div>
-        <div className='mt-1 flex justify-end'>
+        <div className='mt-1 flex justify-end '>
           {user._id === listing.userId && (
             <div
-              className='flex gap-1 items-center text-base text-white8 cursor-pointer'
+              className='mt-3 flex gap-1 items-center text-base text-white8 cursor-pointer'
               onClick={() => deletelisting("/" + listing?._id)}
             >
-              <MdOutlineDeleteOutline size={20} />
+              <MdOutlineDeleteOutline size={24} />
               <span>Delete</span>
             </div>
           )}

@@ -6,7 +6,7 @@ import  Loading  from "../components/Loading"
 import PostCard from '../components/PostCard';
 import FriendsCard from '../components/FriendsCard';
 import ProfileCard from '../components/ProfileCard';
-import TopBar from '../components/TopBar';
+import TopBar from '../components/TopBars/TopBar';
 import { deletePost, fetchAllPosts, getUserInfo, likePost, profileVisitors } from '../utils';
 
 

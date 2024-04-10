@@ -1,12 +1,12 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from "react-router-dom";
-import  TextInput  from "../components/TextInput"
-import  CustomButton  from "../components/CustomButton.jsx"
+import  TextInput  from "../TextInput.jsx"
+import  CustomButton  from "../CustomButton.jsx"
 import { useForm } from "react-hook-form";
 import { IoMdNotificationsOutline } from "react-icons/io";
-import { Logout } from "../redux/userSlice";
-import { fetchAllPosts } from '../utils/index.jsx';
+import { Logout } from "../../redux/userSlice.jsx";
+import { fetchAllPosts } from '../../utils/index.jsx';
 import { IoGameController } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { GiCrownCoin } from "react-icons/gi";

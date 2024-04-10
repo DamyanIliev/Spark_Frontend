@@ -1,5 +1,5 @@
 import React from 'react'
-import {  startMining, apiRequest, fetchAllListings, deleteListing, soldItem } from '../utils';
+import {  apiRequest, fetchAllListings, deleteListing } from '../utils';
 import { useDispatch, useSelector } from 'react-redux'
 import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
@@ -9,15 +9,14 @@ import  Loading  from "../components/Loading";
 import { BiImages } from "react-icons/bi";
 import { handleUploadImages } from '../utils';
 import ListingCard from '../components/ListingCard';
+import TopBarNoSherch from '../components/TopBars/TopBarNoSherch';
 
 const CryptoStore = () => {
   const { user } = useSelector(state => state.user);
   const [sparkCoins, setSparkCoins] = useState(user.sparkCoins || 0)
   const [isListing, setIsListing] = useState(false);
-  const [mining, setMining] = useState(false);
   const [loading, setLoading] = useState("");
   const [image, setFile] = useState(null);
-  const [allreadyMining, setAllreadyMining] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [errMsg2, setErrMsg2] = useState("");
   const { listings } = useSelector((state) => state.listings)
@@ -25,24 +24,7 @@ const CryptoStore = () => {
   const profilepicUrl = `http://localhost:8080/user/public/`;
 
   const { register, reset, handleSubmit, formState: { errors }, } = useForm();
-  
 
-  const handleMining = async () => {
-    try {
-      if(!mining){
-        setMining(true);
-        await startMining(user.token);
-        setTimeout(() => {
-          setMining(false);
-        }, 3600000);
-      }else{
-        setAllreadyMining("Mining is in colldown");
-      }
-    } catch (error) {
-      console.log(error)
-    }
-  };
-  
   const fetchSparkCoins = async (token) => {
     const res = await apiRequest({
         url:"/user/get-spark-coins",
@@ -122,18 +104,11 @@ const CryptoStore = () => {
       fetchListings();
     }, []);
 
-    const sold = async () => {
-
-    }
-
   return (
-    <div className=' w-full h-full bg-oxford-blue-950 '>
-      <div>
-        <button onClick={handleMining} className=' text-4xl text-white8  border border-oxford-blue-50 hover:border-oxford-blue-600'>Mine Spark Coins</button>
-        <span className='text-[#f64949fe] text-sm'>{allreadyMining}</span>
-        <div className=' text-2xl text-white8'>Spark coins:{sparkCoins} </div>
-      </div>
-
+    <>
+    <div className='w-full px-0 sm:px-20 pb-20 2xl:px-40 bg-oxford-blue-950 lg:rounded-lg h-screen overflow-hidden'>
+      <TopBarNoSherch/>
+      <div className='w-full flex gap-2 lg:gap-4 pt-5 pb-10 h-full'>
        <div className='flex-1 h-full px-4 flex flex-col gap-6 overflow-y-auto rounded-lg [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]'>
           <form onSubmit={handleSubmit(handleListingSubmit)} className='mx-5 bg-oxford-blue-900 px-4 rounded-lg'>
             <div className='w-full flex items-center gap-2 py-4 border-b border-[#66666645]'>
@@ -180,7 +155,7 @@ const CryptoStore = () => {
                     <CustomButton
                       type='submit'
                       title='List It'
-                      containerStyles=' w-[85px] bg-[#0444a4] text-white py-1 px-6 rounded-full font-semibold text-sm'
+                      containerStyles=' w-[85px] bg-azure-radiance-600 text-white py-1 px-6 rounded-full font-semibold text-sm'
                     />
                   )}
                 </div>
@@ -196,7 +171,7 @@ const CryptoStore = () => {
                 )}
             </div>
           </form>
-          <div className="flex flex-wrap justify-center">
+          <div className="flex flex-wrap justify-center ">
           {loading ? (
               <Loading />
             ) : listings?.length > 0 ? (
@@ -217,8 +192,9 @@ const CryptoStore = () => {
             )}
           </div>
         </div>
-
+        </div>
     </div>
+    </>
   )
 }
 
