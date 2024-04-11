@@ -42,7 +42,8 @@ export default {
       },
       backgroundImage: {
         'sparkman': "url('/public/game/sparkman.png')",
-        'footer-texture': "url('/img/footer-texture.png')",
+        'racegame': "url('/public/game/racegame.png')",
+        'bullsandcows': "url('/public/game/bullsandcows.png')",
       },
     },
   },

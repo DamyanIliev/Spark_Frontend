@@ -9,6 +9,7 @@ import GameCenter from "./pages/GameCenter";
 import SparkmanGame from "./pages/SparkmanGame";
 import RaceGame from "./pages/RaceGame";
 import CryptoStore from "./pages/CryptoStore";
+import ReactBullsAndCows from "./pages/ReactBullsAndCows"
 
 
 function Layout(){
@@ -40,6 +41,7 @@ function App() {
         <Route path='/gamecenter' element={<GameCenter/>}/>
         <Route path='/sparkmangame' element={<SparkmanGame/>} />
         <Route path='/racegame' element={<RaceGame/>} />
+        <Route path='/bullsandcows' element={<ReactBullsAndCows/>} />
       </Routes>
     </div>
   )

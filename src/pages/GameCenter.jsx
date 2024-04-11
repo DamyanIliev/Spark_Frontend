@@ -12,6 +12,9 @@ const GameCenter = () => {
   const handleRaceGame = () => {
     navigate('/racegame')
   }
+  const handleBullsAndCows = () => {
+    navigate('/bullsandcows')
+  }
 
   return (
     <div className='w-full px-0 sm:px-20 pb-20 2xl:px-40 bg-oxford-blue-950 lg:rounded-lg h-screen overflow-hidden'>
@@ -21,8 +24,11 @@ const GameCenter = () => {
           <div className='pl-14  h-[120px] flex items-center text-4xl text-white8 bg-sparkman hover:border border-oxford-blue-400 rounded-2xl' onClick={handleSparkman}>
              SparkMan <span className='  mt-2 ml-16 text-2xl text-grey8'>Play with our SparkMan!</span>
           </div>
-          <div className='pl-14  h-[120px] flex items-center text-4xl text-white8 bg-sparkman hover:border border-oxford-blue-400 rounded-2xl' onClick={handleRaceGame}>
-             SparkMan <span className='  mt-2 ml-16 text-2xl text-grey8'>Play with our SparkMan!</span>
+          <div className='pl-14  h-[120px] flex items-center text-4xl text-white8 bg-racegame hover:border border-oxford-blue-400 rounded-2xl' onClick={handleRaceGame}>
+             Race Game <span className='  mt-2 ml-16 text-2xl text-grey8'>Start the race!</span>
+          </div>
+          <div className='pl-14 h-[120px] flex items-center text-4xl text-white8 bg-bullsandcows hover:border border-red-400 rounded-2xl' onClick={handleBullsAndCows}>
+             React Game Bulls & Cows <span className='  mt-2 ml-16 text-2xl text-grey8'>Buul or a Cow? </span>
           </div>
         </div>
       </div>
