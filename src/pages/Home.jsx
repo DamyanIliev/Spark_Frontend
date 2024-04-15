@@ -151,7 +151,6 @@ const Home = () => {
         <div className='hidden w-1/3 lg:w-1/4 h-full md:flex flex-col gap-6 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]'>
           <ProfileCard user={user}/>
           <FriendsCard friends={user?.friends}/>
-          <Trending/>
         </div>
 
         {/* Center */}
