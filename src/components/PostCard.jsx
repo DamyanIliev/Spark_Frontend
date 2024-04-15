@@ -214,10 +214,10 @@ const PostCard = ({ post , user, deletePost, likePost }) => {
       <div>
         <p className='text-grey8'>
         {
-          showAll === post?._id ? post?.description : post?.description.slice(0,300)
+          showAll === post?._id ? post?.news : post?.news.slice(0,300)
         } 
         {
-          post?.description?.length > 301 && (
+          post?.news?.length > 301 && (
             showAll === post?._id ? (<span className='text-blue-600 ml-2 font-mediu cursor-pointer' onClick={()=>setShowAll(0)}>Shol Less</span>) : (<span className='text-blue-600 ml-2 font-mediu cursor-pointer' onClick={() => setShowAll(post?._id)}>Show More</span>)
           )
         }

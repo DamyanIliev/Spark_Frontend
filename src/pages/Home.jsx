@@ -45,7 +45,7 @@ const Home = () => {
         method: "POST",
       });
       reset({
-        description: "",
+        news: "",
       });
       setFile(null);
       setErrMsg(res);
@@ -164,12 +164,12 @@ const Home = () => {
                 />
                 <TextInput
                   styles='w-full rounded-full py-5'
-                  placeholder="What's on your mind...."
-                  name='description'
-                  register={register("description", {
+                  placeholder="Somthing new in the crypto worold?"
+                  name='news'
+                  register={register("news", {
                     required: "We can't post nothing 😂",
                   })}
-                  error={errors.description ? errors.description.message : ""}
+                  error={errors.news ? errors.news.message : ""}
                 />
             </div>
             {errMsg?.message && (

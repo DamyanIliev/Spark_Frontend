@@ -44,14 +44,14 @@ const TopBar = () => {
         onSubmit={handleSubmit(handleSearch)}
       >
         <TextInput 
-          placeholder='Search...'
-          styles=' hidden sm:hidden lg:inline-block lg:w-[580px] lg:w-[580px] text-white8 rounded-l-full py-3 bg-oxford-blue-900'
+          placeholder='Find a news...'
+          styles=' hidden sm:hidden lg:inline-block lg:w-[580px] text-white8 rounded-l-full py-3 bg-oxford-blue-900'
           register={register("search")}
         />
         <CustomButton
-          title='Search'
+          title='Find'
           type='submit'
-          containerStyles='hidden sm:hidden lg:inline-block w-[70px] lg:w-[96px] bg-azure-radiance-600 text-white8 px-6 py-2.5 mt-2 rounded-r-full border border-[#66666690] outline-none'
+          containerStyles='hidden sm:hidden lg:inline-block w-[70px] lg:w-[79px] bg-azure-radiance-600 text-white8 px-6 py-2.5 mt-2 rounded-r-full border border-[#66666690] outline-none'
         />
       </form>
 
